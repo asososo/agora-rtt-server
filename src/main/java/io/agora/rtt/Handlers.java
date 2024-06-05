@@ -38,7 +38,7 @@ public class Handlers {
 		@Override
 		public void handle(HttpExchange he) throws IOException {
 			// Handles requests sent to http://localhost:<port>
-			String response = "<h1>Agora RTT Server Demo</h1>" + "<h2>Port: "
+			String response = "<h1>Agora RTT Server Demo ver 20240606</h1>" + "<h2>Port: "
 					+ Main.port + "</h2>";
 			he.sendResponseHeaders(200, response.length());
 			OutputStream os = he.getResponseBody();
