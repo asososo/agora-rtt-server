@@ -56,6 +56,13 @@ public class Handlers {
 			String channelName = (String) jsonObj.get("channelName");
 			int UserId = Integer.valueOf(jsonObj.get("UserId").toString()); 
 
+
+			String response = "line:58 is OK";
+			he.sendResponseHeaders(200, response.length());
+			OutputStream os = he.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
+
 			// Add code here to check user privileges and payment options
 
 			// If everything is OK, create and configure an RTT task
