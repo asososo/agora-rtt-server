@@ -63,22 +63,22 @@ public class Handlers {
 			os.write(response.getBytes());
 			os.close();
 
-			// Add code here to check user privileges and payment options
+			// // Add code here to check user privileges and payment options
 
-			// If everything is OK, create and configure an RTT task
-			RttTask rttTask = new RttTask(UserId, channelName);
-			// Start the task
-			RttResult result = rttTask.startTranscription(); 
-			// Store the task in a task list for later actions
-			if (result == RttResult.SUCCESS) taskList.addTask(rttTask);
+			// // If everything is OK, create and configure an RTT task
+			// RttTask rttTask = new RttTask(UserId, channelName);
+			// // Start the task
+			// RttResult result = rttTask.startTranscription();
+			// // Store the task in a task list for later actions
+			// if (result == RttResult.SUCCESS) taskList.addTask(rttTask);
 
-			// Returned the task status in response
-			String response = rttTask.status; 
-			int responseCode = (result == RttResult.SUCCESS) ? 200 : 500;
-			he.sendResponseHeaders(responseCode, response.length());
-			OutputStream os = he.getResponseBody();
-			os.write(response.getBytes());
-			os.close();
+			// // Returned the task status in response
+			// String response = rttTask.status;
+			// int responseCode = (result == RttResult.SUCCESS) ? 200 : 500;
+			// he.sendResponseHeaders(responseCode, response.length());
+			// OutputStream os = he.getResponseBody();
+			// os.write(response.getBytes());
+			// os.close();
 		}
 	}
 

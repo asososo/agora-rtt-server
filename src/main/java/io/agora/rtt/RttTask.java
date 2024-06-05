@@ -17,15 +17,15 @@ import java.util.Base64;
 public class RttTask {
 
     // Agora ID and security parameters
-    private static final String appId = System.getenv("APP_ID"); 
-    private static final String appCertificate = System.getenv("APP_CERTIFICATE"); 
-    private static final String customerId = System.getenv("CUSTOMER_ID"); 
-    private static final String customerSecret = System.getenv("CUSTOMER_SECRET"); 
+    private static final String appId = System.getenv("APP_ID");
+    private static final String appCertificate = System.getenv("APP_CERTIFICATE");
+    private static final String customerId = System.getenv("CUSTOMER_ID");
+    private static final String customerSecret = System.getenv("CUSTOMER_SECRET");
 
     // Cloud storage parameters
-    private String ossSecretKey = System.getenv("OSS_SECRET_KEY"); 
+    private String ossSecretKey = System.getenv("OSS_SECRET_KEY");
     private String ossAccessKey = System.getenv("OSS_ACCESS_KEY");
-    private String ossBucketName = System.getenv("OSS_BUCKET_NAME"); 
+    private String ossBucketName = System.getenv("OSS_BUCKET_NAME"); // fanfan-agora
     private static final String baseUrl = "https://api.agora.io";
     
     // Authorization header for HTTP requests
@@ -132,8 +132,8 @@ public class RttTask {
                                                                         .put("accessKey", ossAccessKey) // Access key of oss
                                                                         .put("secretKey", ossSecretKey) // Secret key of oss
                                                                         .put("bucket", ossBucketName) // Oss bucket name
-                                                                        .put("vendor", 1) // Your Oss Vendor ID
-                                                                        .put("region", 1) // Your Oss Region ID
+                                                                        .put("vendor", 6) // Your Oss Vendor ID
+                                                                        .put("region", 1) // Your Oss Region ID // google not effect
                                                                         .put("fileNamePrefix",
                                                                                 new JSONArray() // An array of directory strings to append to storage files
                                                                                         .put("folder")
