@@ -15,7 +15,6 @@ import org.json.JSONObject;
 import java.util.Base64;
 
 public class RttTask {
-
     // Agora ID and security parameters
     private static final String appId = System.getenv("APP_ID");
     private static final String appCertificate = System.getenv("APP_CERTIFICATE");
@@ -25,7 +24,7 @@ public class RttTask {
     // Cloud storage parameters
     private String ossSecretKey = System.getenv("OSS_SECRET_KEY");
     private String ossAccessKey = System.getenv("OSS_ACCESS_KEY");
-    private String ossBucketName = System.getenv("OSS_BUCKET_NAME"); // fanfan-agora
+    private String ossBucketName = "fanfan-agora";
     private static final String baseUrl = "https://api.agora.io";
     
     // Authorization header for HTTP requests
@@ -34,7 +33,7 @@ public class RttTask {
     
     public String channelName; // The channel for the RTT task
     public String status; // Holds the last status returned
-    public String language = "en-US"; // Max 2 simultaneous languages are supported, separated by a comma.
+    public String language = "en-US,zh-TW"; // Max 2 simultaneous languages are supported, separated by a comma.
     public String taskId = ""; // Holds the ID of the RTT task
     public int userId; // Identifies the user who sent the start request
     public int maxIdleTime = 120; // If there is no activity of this time, the task stops automatically.
@@ -55,6 +54,7 @@ public class RttTask {
 
     private RttResult getBuilderToken() throws IOException {
         // Build the request endpoint url
+        // System.out.println("authorizationHeader: " + authorizationHeader);
         String url = baseUrl + "/v1/projects/" + appId + "/rtsc/speech-to-text/builderTokens";
 
         MediaType mediaType = MediaType.parse("application/json");

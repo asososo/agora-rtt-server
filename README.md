@@ -102,6 +102,10 @@ To set up the demo Real-time Transcription business server, do the following:
     In your IDE, click **Start debugging** to launch the server. You see the following message in the terminal:
 
     ```
+    mvn exec:java
+    ```
+
+    ```
     RTT server started on port 80
     ```
 
